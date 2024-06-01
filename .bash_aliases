@@ -1,0 +1,38 @@
+###> SYMFONY RELATED ###
+alias sf="symfony"
+alias sfc="symfony console"
+###< SYMFONY RELATED ###
+
+###> SYS COMMANDS ###
+alias ls="ls --color"
+alias grep="grep --color"
+alias ll="ls -la"
+alias lh="ls -lh"
+alias la="ls -a"
+alias igrep="grep -i"
+alias du='du -sh'
+alias dusort='du -sh * | sort -hr'
+alias mv='mv -i'
+alias cp='cp -i'
+alias rm='rm -i'
+###< SYS COMMANDS ###
+
+# Show $PATH in a readable way
+alias path='echo -e ${PATH//:/\\n}'
+
+###> NETWORK ###
+alias net="nmap -v -Pn -A"
+###< NETWORK ###
+
+###> DOCKER ###
+alias dc="docker compose"
+alias dcbc="docker compose exec php bin/console"
+###< DOCKER ###
+
+###> RADIO / MUSIC ###
+alias bfm="ffplay -nodisp 'https://audio.bfmtv.com/bfmbusiness_128.mp3?aw_0_1st.playerId=BFMBusiness_audio_web&aggregator=BFMBusiness_audio_web'"
+alias franceinter="ffplay -nodisp 'https://stream.radiofrance.fr/franceinter/franceinter_hifi.m3u8?id=radiofrance'"
+alias rtl2="ffplay -nodisp 'https://live.m6radio.quortex.io/webpHJPXnXrN7B6J7Q8mcqmxP/grouprtl2/national/long/audio-64000/index.m3u8'"
+alias virgin="ffplay -nodisp 'https://europe2.lmn.fm/europe2.128.aac/playlist.m3u8?listeningSessionID=638e66f239e18b95_1522345_Y8tXlYzO__0000001fSma&downloadSessionID=0&aw_0_1st.playerid=lagardereappEurope2&aw_0_req.userConsentV2=CPkcVsAPkcVsAAHABBENCuCgAAAAAAAAAAAAAAAAAAEhoAMAAQSXFQAYAAgkuEgAwABBJcRABgACCS4yADAAEElx0AGAAIJLkIAMAAQSXJQAYAAgkuUgAwABBJcA.YAAAAAAAAAAA'"
+alias lofi="ffplay -nodisp 'https://cf-media.sndcdn.com/PQ7neHQNBMNO.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vUFE3bmVIUU5CTU5PLjEyOC5tcDMqIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjcxNzk5OTA1fX19XX0_&Signature=Lbsn9-k12RpaFl0tYcUAOWRNHzt9OOtn8m~i9aglS~ZR9c9UCA~jCpOMrxCFWUhaUwPC48k5TaVN1Fh~6E6MJpiysqbC1OwzC~Kn~mPg-W9STdxgafIAErlD593KGv7FbWsnqtbZ-6UYNTy4HNsURRrkVSHJ1MsmU~0TO6Xy1xRie6msCnkYub3F0svVxFdl~-qQPayTVHdSEThE6k7QM6l1awKoMJCUG4Yo8ibzzb37TPxcCjt5VZ5odIdCFz-IJmITMcDm76z5-PEVrXWJ9TznUTQBxGsNKoe8JxdE98kVyywyXDrtADzrJD7sj01uDmWdgVCZKSn0kgfwfiDbCw__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ'"
+###< RADIO / MUSIC ###
