@@ -1,3 +1,9 @@
+update_dotfiles() {
+  cd ~/dotfiles
+  git pull
+  cd -
+}
+
 # Extract most know archives with one command
 extract()
 {

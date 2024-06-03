@@ -21,15 +21,10 @@ HISTFILESIZE=4000
 HISTTIMEFORMAT="%F %T "
 ###### BASH HISTORY ######
 
-###### PROMPT ######
-PS1="\[\e[0;37m\]#\#\[\e[0;m\] \[\e[0;36m\][\t]\[\e[0;m\] \[\e[0;32m\]\u@\h\[\e[0;m\]: \[\e[1;34m\]\w\[\e[0;m\] \[\e[0;35m\] \n\\$\[\e[0;m\] "
-###### PROMPT ######
-
-
 # If possible, add tab completion for many commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
+for file in ./bash_*; do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file"
+done
 
