@@ -12,5 +12,5 @@ alias php=php8.3
 
 ###> CADDY server ###
 # Visit https://localhost:8090 to browse the current directory
-alias caddy-serve="docker run --rm --interactive --tty --volume $(pwd):/srv --publish ${1:-8090}:443 caddy caddy file-server --browse --domain localhost"
+alias caddy-serve="docker run --rm --interactive --tty --volume $(pwd):/srv --publish ${1:-8090}:80 caddy caddy file-server --browse"
 ###< CADDY server ###
