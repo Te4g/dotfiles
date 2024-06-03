@@ -24,7 +24,7 @@ HISTTIMEFORMAT="%F %T "
 # If possible, add tab completion for many commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
 
-for file in ./bash_*; do
+for file in ~/.dotfiles/.bash_*; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 
