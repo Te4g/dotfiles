@@ -1,11 +1,26 @@
-#!/bin/sh
+#!/bin/bash
 
 # Personal setup script for OSX
+
+###> Homebrew setup ###
 echo "Installing brew..."
-/bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+ZPROFILE_PATH="$HOME/.zprofile"
+
+if [ ! -f "$ZPROFILE_PATH" ]; then
+    touch "$ZPROFILE_PATH"
+fi
+
+if ! grep -q 'eval "$(/opt/homebrew/bin/brew shellenv)"' "$ZPROFILE_PATH"; then
+    (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> "$ZPROFILE_PATH"
+fi
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 echo "Installing brew cask..."
 brew install cask
+###< Homebrew setup ###
 
 # Dev Tools
 brew install git
