@@ -4,10 +4,14 @@ case $- in
       *) return;;
 esac
 
+
 export CLICOLOR=1
+
+###> Prompt related ###
+fpath+=("$(brew --prefix)/share/zsh/site-functions")
 autoload -U promptinit; promptinit
 prompt pure
-
+###< Prompt related ###
 
 ###> HISTORY ###
 HISTSIZE=9999999
