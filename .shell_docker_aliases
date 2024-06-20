@@ -7,7 +7,6 @@ alias php8.0="docker run --rm --interactive --tty --workdir /app --volume $(pwd)
 alias php8.1="docker run --rm --interactive --tty --workdir /app --volume $(pwd):/app php:8.1-cli php"
 alias php8.2="docker run --rm --interactive --tty --workdir /app --volume $(pwd):/app php:8.2-cli php"
 alias php8.3="docker run --rm --interactive --tty --workdir /app --volume $(pwd):/app php:8.3-cli php"
-alias php=php8.3
 ###< PHP aliases ###
 
 ###> CADDY server ###

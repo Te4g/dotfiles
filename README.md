@@ -3,7 +3,11 @@
 ```bash
 git clone git@github.com:Te4g/dotfiles.git ~/.dotfiles
 ```
-2. Run the installation script
+2. Go to the project directory
 ```bash
-cd ~/.dotfiles && ./install.sh
+cd ~/.dotfiles
 ```
+3. Run one of the makefile commands
+- `make install` to install the dotfiles
+- `make brew` to install brew packages
+- `make macos` to do both
