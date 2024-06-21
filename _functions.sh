@@ -9,8 +9,17 @@ backup_file() {
 backup_sym_link() {
 	if [ -L "$1" ]; then
 		LINKED_FILE=$(readlink -f "$1")
-		cp "$LINKED_FILE" "$1.bak"
+		cp -L -f "$LINKED_FILE" "$1.bak"
 	fi
+}
+
+create_sym_link() {
+    local original_file=$1
+    local symbolic_link=$2
+
+    backup_sym_link "$symbolic_link"
+    unlink "$symbolic_link"
+    ln -s "$original_file" "$symbolic_link"
 }
 
 setup_phpswitch() {
@@ -18,5 +27,5 @@ setup_phpswitch() {
 		mkdir -p "$PERSONAL_BINARIES_DIR"
 	fi
 
-	ln -s "$HOME/.dotfiles/phpswitch" "$PERSONAL_BINARIES_DIR/phpswitch"
+	ln -sf "$HOME/.dotfiles/phpswitch" "$PERSONAL_BINARIES_DIR/phpswitch"
 }

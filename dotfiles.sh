@@ -15,11 +15,6 @@ if [ $is_shell_supported -eq 0 ]; then
     exit 1
 fi
 
-backup_sym_link "$HOME/.${CURRENT_SHELL}rc"
-ln -s "$HOME/.dotfiles/.${CURRENT_SHELL}rc" "$HOME/.${CURRENT_SHELL}rc"
-
-backup_sym_link "$HOME/.gitconfig"
-ln -s "$HOME/.dotfiles/.gitconfig" "$HOME/.gitconfig"
-
-backup_sym_link "$HOME/.gitignore"
-ln -s "$HOME/.dotfiles/.gitignore" "$HOME/.gitignore"
+create_sym_link "$HOME/.dotfiles/.${CURRENT_SHELL}rc" "$HOME/.${CURRENT_SHELL}rc"
+create_sym_link "$HOME/.dotfiles/.gitconfig" "$HOME/.gitconfig"
+create_sym_link "$HOME/.dotfiles/.gitignore" "$HOME/.gitignore"
