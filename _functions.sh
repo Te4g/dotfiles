@@ -11,5 +11,5 @@ setup_phpswitch() {
 		mkdir -p "$PERSONAL_BINARIES_DIR"
 	fi
 
-	ln -s "$HOME/.dotfiles/.phpswitch" "$PERSONAL_BINARIES_DIR/phpswitch"
+	ln -s "$HOME/.dotfiles/phpswitch" "$PERSONAL_BINARIES_DIR/phpswitch"
 }
