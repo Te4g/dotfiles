@@ -6,6 +6,7 @@ esac
 
 
 export CLICOLOR=1
+export PATH="$HOME/.local/bin:$PATH"
 
 ###> Prompt related ###
 fpath+=("$(brew --prefix)/share/zsh/site-functions")

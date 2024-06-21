@@ -15,6 +15,9 @@ alias dusort='du -sh * | sort -hr'
 alias mv='mv -i'
 alias cp='cp -i'
 alias rm='rm -i'
+alias vim='nvim'
+alias cat='bat --paging=never'
+alias diff='diff --color --side-by-side --unified'
 ###< SYS COMMANDS ###
 
 # Show $PATH in a readable way
@@ -28,6 +31,12 @@ alias net="nmap -v -Pn -A"
 alias dc="docker compose"
 alias dcbc="docker compose exec php bin/console"
 ###< DOCKER ###
+
+###> SHORTCUTS ###
+alias dotfiles="cd ~/.dotfiles"
+alias cdssh="cd ~/.ssh"
+alias catssh="cat ~/.ssh/config"
+###< SHORTCUTS ###
 
 ###> RADIO / MUSIC ###
 alias bfm="ffplay -nodisp 'https://audio.bfmtv.com/bfmbusiness_128.mp3?aw_0_1st.playerId=BFMBusiness_audio_web&aggregator=BFMBusiness_audio_web'"

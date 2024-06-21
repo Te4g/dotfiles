@@ -1,0 +1,38 @@
+#!/bin/zsh
+
+loader() {
+	printf "["
+	while kill -0 "$1" 2> /dev/null; do
+		printf  "▓"
+		sleep 0.5
+	done
+	printf "] done!\n"
+}
+
+if [ $# -ne 1 ]; then
+	echo 1>&2 "USAGE: $0 <phpVersion>"
+	exit 2
+fi
+
+INSTALLED_VERSIONS=`find /opt/homebrew/opt | grep 'php@' | sed 's/\/opt\/homebrew\/opt\/php@//'`
+
+if [[ ! -f /opt/homebrew/opt/php@${1}/bin/php ]]; then
+	echo 1>&2 "/opt/homebrew/opt/php@${1}/bin/php was not found"
+	printf 'valid options:\n%s\n' "${INSTALLED_VERSIONS[*]}"
+	exit 2
+fi
+
+CURRENT_PHP_VERSION=$(php -r "echo PHP_MAJOR_VERSION . '.' . PHP_MINOR_VERSION;")
+
+echo "Switching from PHP version $CURRENT_PHP_VERSION to $1 ..."
+{
+	brew unlink "php@$CURRENT_PHP_VERSION" > /dev/null 2>&1
+	brew services stop "php@$CURRENT_PHP_VERSION" > /dev/null 2>&1
+
+	brew link --force --overwrite "php@$1" > /dev/null 2>&1
+	brew services start "php@$1" > /dev/null 2>&1
+} &
+loader $!
+
+printf "\n====== PHP Version ======\n"
+php -v

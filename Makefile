@@ -4,7 +4,10 @@ dotfiles: ## Setup dotfiles
 brew: ## Setup brew packages
 	./brew.sh
 
-macos: dotfiles brew ## Setup dotfiles and brew packages
+phpswitch: ## Setup phpswitch
+	@. _functions.sh && setup_phpswit
+
+macos: dotfiles brew phpswitch ## Setup dotfiles, brew packages and phpswitcher
 
 .DEFAULT_GOAL := help
 help:
