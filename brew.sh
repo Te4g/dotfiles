@@ -1,12 +1,11 @@
 #!/bin/bash
 
+. _variables.sh
 # Personal setup script for OSX
 
 ###> Homebrew setup ###
 echo "Installing brew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-ZPROFILE_PATH="$HOME/.zprofile"
 
 if [ ! -f "$ZPROFILE_PATH" ]; then
     touch "$ZPROFILE_PATH"

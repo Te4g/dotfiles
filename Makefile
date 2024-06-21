@@ -5,9 +5,15 @@ brew: ## Setup brew packages
 	./brew.sh
 
 phpswitch: ## Setup phpswitch
-	@. _functions.sh && setup_phpswit
+	@. _functions.sh && setup_phpswitch
 
 macos: dotfiles brew phpswitch ## Setup dotfiles, brew packages and phpswitcher
+
+update: ## Update project
+	git pull origin main
+	dotfiles
+	phpswitch
+	@. _variables.sh && source "$HOME/.${CURRENT_SHELL}rc"
 
 .DEFAULT_GOAL := help
 help:

@@ -1,7 +1,6 @@
 update_dotfiles() {
   cd ~/.dotfiles
-  git pull
-  source ~/.bashrc
+  make update
   cd -
 }
 

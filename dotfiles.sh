@@ -2,9 +2,6 @@
 
 . "$HOME/.dotfiles/_functions.sh"
 
-SUPPORTED_SHELLS="bash zsh"
-CURRENT_SHELL=$(basename "$SHELL")
-
 is_shell_supported=0
 for shell in $SUPPORTED_SHELLS; do
     if [ "$shell" = "$CURRENT_SHELL" ]; then

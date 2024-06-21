@@ -1,8 +1,8 @@
-PERSONAL_BINARIES_DIR="$HOME/.local/bin"
+. _variables.sh
 
 backup_file() {
 	if [ -f "$1" ]; then
-		mv "$1" "$1.bak"
+		cp "$1" "$1.bak"
 	fi
 }
 
