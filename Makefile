@@ -4,6 +4,7 @@ dotfiles: ## Setup dotfiles
 brew: ## Setup brew packages
 	./brew.sh
 
+.PHONY: phpswitch
 phpswitch: ## Setup phpswitch
 	@. _functions.sh && setup_phpswitch
 
@@ -13,7 +14,7 @@ update: ## Update project
 	@git pull origin main
 	$(MAKE) dotfiles
 	$(MAKE) phpswitch
-	@. _variables.sh && source "$HOME/.${CURRENT_SHELL}rc"
+	@. _variables.sh && source "$${HOME}/.$${CURRENT_SHELL}rc"
 
 .DEFAULT_GOAL := help
 help:
