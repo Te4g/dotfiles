@@ -12,8 +12,8 @@ macos: dotfiles brew phpswitch ## Setup dotfiles, brew packages and phpswitcher
 
 update: ## Update project
 	@git pull origin main
-	$(MAKE) dotfiles
-	$(MAKE) phpswitch
+	@$(MAKE) dotfiles
+	@$(MAKE) phpswitch
 	@. _variables.sh && source "$${HOME}/.$${CURRENT_SHELL}rc"
 
 .DEFAULT_GOAL := help
