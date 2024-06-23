@@ -64,6 +64,7 @@ brew install --cask amazon-music
 brew install --cask raycast # An app to control your tools with a few keystrokes
 brew install jump # A fast way to navigate your filesystem from the command line
 brew install navi # An interactive cheatsheet tool for the command-line
+brew install stats # MacOS system monitor in your menu bar
 
 # Ffmpeg
 brew tap homebrew-ffmpeg/ffmpeg
