@@ -4,9 +4,9 @@ case $- in
       *) return;;
 esac
 
-
 export CLICOLOR=1
 export PATH="$HOME/.local/bin:$PATH"
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 ###> Prompt related ###
 fpath+=("$(brew --prefix)/share/zsh/site-functions")
