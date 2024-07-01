@@ -28,6 +28,12 @@ HISTTIMEFORMAT="%F %T "
 PS1="\[\e[0;37m\]#\#\[\e[0;m\] \[\e[0;36m\][\t]\[\e[0;m\] \[\e[0;32m\]\u@\h\[\e[0;m\]: \[\e[1;34m\]\w\[\e[0;m\] \[\e[0;35m\] \n\\$\[\e[0;m\] "
 ###< PROMPT ###
 
+###> NVM ###
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
+[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && \. "/usr/local/opt/nvm/etc/bash_completion"
+###< NVM ###
+
 # If possible, add tab completion for many commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
 

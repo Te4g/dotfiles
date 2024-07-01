@@ -42,6 +42,12 @@ if [ -f "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.
 fi
 ###< ZSH EXTENSIONS ###
 
+###> NVM ###
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
+[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && \. "/usr/local/opt/nvm/etc/bash_completion"
+###< NVM ###
+
 for file in ~/.dotfiles/.shell_*; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
