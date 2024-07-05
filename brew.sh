@@ -40,6 +40,7 @@ brew install opentofu
 brew install openstackclient
 brew install ansible
 brew install serverless
+brew install awscli
 
 # Communication Apps
 brew install --cask slack
