@@ -16,7 +16,7 @@ alias mv='mv -i'
 alias cp='cp -i'
 alias rm='rm -i'
 alias vim='nvim'
-alias cat='bat --paging=never'
+alias cat='bat --paging=never -p'
 alias diff='diff --color --side-by-side --unified'
 alias pstorm=phpstorm
 ###< SYS COMMANDS ###
