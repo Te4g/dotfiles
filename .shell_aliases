@@ -3,6 +3,10 @@ alias sf="symfony"
 alias sfc="symfony console"
 ###< SYMFONY RELATED ###
 
+###> LARAVEL RELATED ###
+alias sail="./vendor/bin/sail"
+###< LARAVEL RELATED ###
+
 ###> SYS COMMANDS ###
 alias ls="ls --color"
 alias grep="grep --color"
