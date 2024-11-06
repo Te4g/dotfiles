@@ -5,7 +5,6 @@ case $- in
 esac
 
 export CLICOLOR=1
-export PATH="$HOME/.local/bin:$PATH"
 export HOMEBREW_NO_AUTO_UPDATE=1
 
 ###> Prompt related ###
@@ -51,4 +50,3 @@ export NVM_DIR="$HOME/.nvm"
 for file in ~/.dotfiles/.shell_*; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
-
