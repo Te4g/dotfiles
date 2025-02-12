@@ -35,6 +35,7 @@ alias net="nmap -v -Pn -A"
 ###> DOCKER ###
 alias dc="docker compose"
 alias dcbc="docker compose exec php bin/console"
+alias dcc="docker compose exec php composer"
 ###< DOCKER ###
 
 ###> SHORTCUTS ###
