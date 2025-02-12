@@ -18,3 +18,5 @@ fi
 create_sym_link "$HOME/.dotfiles/.${CURRENT_SHELL}rc" "$HOME/.${CURRENT_SHELL}rc"
 create_sym_link "$HOME/.dotfiles/.gitconfig" "$HOME/.gitconfig"
 create_sym_link "$HOME/.dotfiles/.gitignore" "$HOME/.gitignore"
+
+. "$HOME/.${CURRENT_SHELL}rc"
