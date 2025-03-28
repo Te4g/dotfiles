@@ -23,7 +23,6 @@ alias vim='nvim'
 alias cat='bat --paging=never -p'
 alias diff='diff --color --side-by-side --unified'
 alias pstorm=phpstorm
-alias z=zoxide
 ###< SYS COMMANDS ###
 
 # Show $PATH in a readable way
