@@ -47,6 +47,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && \. "/usr/local/opt/nvm/etc/bash_completion"
 ###< NVM ###
 
+###> Zoxide ###
+eval "$(zoxide init zsh)"
+source <(fzf --zsh)
+###< Zoxide ###
+
 for file in ~/.dotfiles/.shell_*; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
