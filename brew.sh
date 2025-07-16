@@ -73,7 +73,7 @@ brew install fzf # Command-line fuzzy finder written in Go
 
 # Ffmpeg
 brew tap homebrew-ffmpeg/ffmpeg
-brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-librsvg --with-openjpeg --with-libvmaf --with-zeromq
+brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-librsvg --with-openjpeg --with-libvmaf --with-zeromq --with-libssh
 
 # Custom shell
 brew install --cask iterm2
