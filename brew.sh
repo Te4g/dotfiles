@@ -26,6 +26,7 @@ brew install git
 brew install gh
 brew install nvm
 brew install pnpm
+brew install oven-sh/bun/bun
 brew install php@8.1 php@8.2 php@8.3 php@8.4
 brew install symfony-cli/tap/symfony-cli
 brew install platformsh/tap/platformsh-cli
