@@ -8,7 +8,11 @@ brew: ## Setup brew packages
 phpswitch: ## Setup phpswitch
 	@. _functions.sh && setup_phpswitch
 
-macos: dotfiles brew phpswitch ## Setup dotfiles, brew packages and phpswitcher
+.PHONY: setup_pie
+setup_pie: ## Setup PIE (PHP installer for extensions)
+	@. _functions.sh && setup_php_installer_for_extensions
+
+macos: dotfiles brew phpswitch setup_pie ## Setup dotfiles, brew packages, phpswitcher and PIE
 
 update: ## Update project
 	@git pull origin main

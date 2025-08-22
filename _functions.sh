@@ -29,3 +29,18 @@ setup_phpswitch() {
 
 	ln -sf "$HOME/.dotfiles/phpswitch" "$PERSONAL_BINARIES_DIR/phpswitch"
 }
+
+# https://github.com/php/pie
+setup_php_installer_for_extensions() {
+	if [ ! -d "$PERSONAL_BINARIES_DIR" ]; then
+		mkdir -p "$PERSONAL_BINARIES_DIR"
+	fi
+
+	curl -L -o pie.phar https://github.com/php/pie/releases/latest/download/pie.phar
+    chmod +x pie.phar
+
+	mv pie.phar "$PERSONAL_BINARIES_DIR/pie"
+
+	echo "Installing xdebug ..."
+	pie install xdebug/xdebug
+}
