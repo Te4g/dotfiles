@@ -43,4 +43,7 @@ setup_php_installer_for_extensions() {
 
 	echo "Installing xdebug ..."
 	pie install xdebug/xdebug
+
+	echo "Installing redis ..."
+	pie install phpredis/phpredis
 }
