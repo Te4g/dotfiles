@@ -213,3 +213,51 @@ ghce() {
 	GH_DEBUG="$GH_DEBUG" GH_HOST="$GH_HOST" gh copilot explain "$@"
 }
 ###< GH Copilot related ###
+
+###> SOCKS proxy related ###
+SSH_SOCKS_ROOT_TARGET="${SSH_SOCKS_ROOT_TARGET:-root@2001:bc8:1d90:256d:dc00:ff:fe2c:4e7d}"
+SSH_SOCKS_ROOT_PORT="${SSH_SOCKS_ROOT_PORT:-7000}"
+SSH_SOCKS_ROOT_SERVICE="${SSH_SOCKS_ROOT_SERVICE:-Wi-Fi}"
+SSH_SOCKS_ROOT_SOCKET="${SSH_SOCKS_ROOT_SOCKET:-${TMPDIR:-/tmp}/ssh-socks-root-${SSH_SOCKS_ROOT_PORT}.sock}"
+
+ssh-socks-root-running() {
+	[ -S "$SSH_SOCKS_ROOT_SOCKET" ] && ssh -S "$SSH_SOCKS_ROOT_SOCKET" -O check "$SSH_SOCKS_ROOT_TARGET" >/dev/null 2>&1
+}
+
+ssh-socks-root() {
+	local started_tunnel=0
+
+	if ! ssh-socks-root-running; then
+		ssh -fN \
+			-M \
+			-S "$SSH_SOCKS_ROOT_SOCKET" \
+			-o ExitOnForwardFailure=yes \
+			-D "$SSH_SOCKS_ROOT_PORT" \
+			"$SSH_SOCKS_ROOT_TARGET" || return 1
+		started_tunnel=1
+	fi
+
+	if ! networksetup -setsocksfirewallproxy "$SSH_SOCKS_ROOT_SERVICE" 127.0.0.1 "$SSH_SOCKS_ROOT_PORT"; then
+		if [ "$started_tunnel" -eq 1 ]; then
+			ssh -S "$SSH_SOCKS_ROOT_SOCKET" -O exit "$SSH_SOCKS_ROOT_TARGET" >/dev/null 2>&1
+		fi
+		return 1
+	fi
+
+	networksetup -setsocksfirewallproxystate "$SSH_SOCKS_ROOT_SERVICE" on
+}
+alias socksroot="ssh-socks-root"
+
+ssh-socks-root-off() {
+	local status=0
+
+	networksetup -setsocksfirewallproxystate "$SSH_SOCKS_ROOT_SERVICE" off || status=$?
+
+	if ssh-socks-root-running; then
+		ssh -S "$SSH_SOCKS_ROOT_SOCKET" -O exit "$SSH_SOCKS_ROOT_TARGET" >/dev/null 2>&1 || status=$?
+	fi
+
+	return $status
+}
+alias unsocksroot="ssh-socks-root-off"
+###< SOCKS proxy related ###
