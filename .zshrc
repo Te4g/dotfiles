@@ -55,3 +55,9 @@ source <(fzf --zsh)
 for file in ~/.dotfiles/.shell_*; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
+
+# Vite+ bin (https://viteplus.dev)
+. "$HOME/.vite-plus/env"
+
+# Scaleway CLI autocomplete initialization.
+eval "$(scw autocomplete script shell=zsh)"
