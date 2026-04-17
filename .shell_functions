@@ -249,15 +249,15 @@ ssh-socks-root() {
 alias socksroot="ssh-socks-root"
 
 ssh-socks-root-off() {
-	local status=0
+	local exit_code=0
 
-	networksetup -setsocksfirewallproxystate "$SSH_SOCKS_ROOT_SERVICE" off || status=$?
+	networksetup -setsocksfirewallproxystate "$SSH_SOCKS_ROOT_SERVICE" off || exit_code=$?
 
 	if ssh-socks-root-running; then
-		ssh -S "$SSH_SOCKS_ROOT_SOCKET" -O exit "$SSH_SOCKS_ROOT_TARGET" >/dev/null 2>&1 || status=$?
+		ssh -S "$SSH_SOCKS_ROOT_SOCKET" -O exit "$SSH_SOCKS_ROOT_TARGET" >/dev/null 2>&1 || exit_code=$?
 	fi
 
-	return $status
+	return $exit_code
 }
 alias unsocksroot="ssh-socks-root-off"
 ###< SOCKS proxy related ###
