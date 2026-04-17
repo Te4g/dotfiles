@@ -62,6 +62,7 @@ brew install bat # A cat(1) clone with wings.
 brew install tlrc # A rust client for https://github.com/tldr-pages/tldr
 brew install mysql-client # I use it to create dumps of mysql databases. The path of mysqldump "/opt/homebrew/opt/mysql-client/bin/mysqldump"
 brew install act # Run GitHub Actions locally
+brew install ripgrep # recursively searches directories for a regex pattern while respecting gitignore
 
 # Miscellaneous
 brew install --cask amazon-music
