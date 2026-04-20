@@ -41,6 +41,11 @@
 	# Drop current changes.
 	drop = !git stash && git stash drop
 
+	# Worktrees related.
+	wta = '!f() { git worktree add -b "$1" "./.worktrees/$1" "$2"; }; f'
+    wtr = '!f() { git worktree remove "./.worktrees/$1"; }; f'
+    wtl = '!f() { git worktree list; }; f'
+
 	# Show aliases.
 	aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
 
