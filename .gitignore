@@ -1,6 +1,7 @@
 .idea
 .DS_Store
 **/.perso
+**/.worktrees
 *.local
 
 # FVM Version Cache
