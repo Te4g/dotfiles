@@ -53,6 +53,7 @@ brew install --cask google-chrome
 brew install --cask chromium
 brew install --cask vlc
 brew install --cask teamviewer
+brew install --cask ovh/tap/ovhcloud-cli
 
 # Utils
 brew install neovim
