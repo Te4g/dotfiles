@@ -35,8 +35,8 @@ alias net="nmap -v -Pn -A"
 ###> DOCKER ###
 alias dc="docker compose"
 alias dca="docker compose exec php php artisan"
-alias dcbc="docker compose exec php bin/console"
-alias dcbcd='docker compose exec -e XDEBUG_SESSION=1 -e PHP_IDE_CONFIG="serverName=xdebug" php bin/console'
+alias dcbc="docker compose exec php php -d memory_limit=-1 bin/console"
+alias dcbcd='docker compose exec -e XDEBUG_SESSION=1 -e PHP_IDE_CONFIG="serverName=xdebug" php php -d memory_limit=-1 bin/console'
 alias dcc="docker compose exec php composer"
 ###< DOCKER ###
 
